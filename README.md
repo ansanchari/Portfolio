@@ -30,13 +30,11 @@ To run this project locally on your machine:
    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
    cd your-repo-name
 
-```
 
 2. **Install dependencies:**
-```bash
-npm install
-
-```
+   ```bash
+   npm install
+   ```
 
 
 3. **Set up Environment Variables:**
