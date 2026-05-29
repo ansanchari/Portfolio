@@ -39,17 +39,17 @@ To run this project locally on your machine:
 
 3. **Set up Environment Variables:**
 Create a `.env.local` file in the root directory. You will need a Formspree account to handle the contact form submissions.
-```env
-NEXT_PUBLIC_FORMSPREE=your_formspree_endpoint_id
+   ```env
+   NEXT_PUBLIC_FORMSPREE=your_formspree_endpoint_id
 
-```
+   ```
 
 
 4. **Run the development server:**
-```bash
-npm run dev
+   ```bash
+   npm run dev
 
-```
+   ```
 
 
 Open [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000) with your browser to see the result.
