@@ -1,4 +1,3 @@
-```markdown
 # Sanchari Mukherjee | Portfolio
 
 A modern, highly interactive personal portfolio built to showcase full-stack AI applications, agentic workflows, and software engineering projects. Engineered with a focus on seamless user experience, complex route animations, and performant web design.
