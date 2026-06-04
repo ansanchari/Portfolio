@@ -1,19 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import CountUp from "react-countup";
-import {
-  FaPython,
-  FaDatabase,
-  FaReact,
-  FaProjectDiagram,
-  FaCode
-} from "react-icons/fa";
-import {
-  SiNextdotjs,
-  SiStreamlit,
-  SiPostgresql,
-  SiC
-} from "react-icons/si";
 
 import Avatar from "../../components/Avatar";
 import Circles from "../../components/Circles";
@@ -25,16 +12,32 @@ export const aboutData = [
     title: "skills",
     info: [
       {
-        title: "AI & Data Science",
-        icons: [FaPython, FaDatabase, FaProjectDiagram],
+        title: (
+          <>
+            <span className="font-bold text-white">AI/LLM Architecture:</span> Agentic AI, LangChain, Retrieval-Augmented Generation (RAG), Natural Language Processing (NLP), VoiceAI, Machine Learning, ChromaDB
+          </>
+        ),
       },
       {
-        title: "Software Engineering",
-        icons: [SiC, FaReact, SiNextdotjs, SiStreamlit, SiPostgresql],
+        title: (
+          <>
+            <span className="font-bold text-white">Programming Languages:</span> Python, C, SQL
+          </>
+        ),
       },
       {
-        title: "Product Management",
-        icons: [FaCode],
+        title: (
+          <>
+            <span className="font-bold text-white">Product Management:</span> Software Development Life Cycle (SDLC), Agile, Waterfall, Rapid Prototyping, Notion
+          </>
+        ),
+      },
+      {
+        title: (
+          <>
+            <span className="font-bold text-white">Relevant Coursework:</span> Data Structures & Algorithms, Operating Systems, AI-ML, Computer Networks
+          </>
+        ),
       },
     ],
   },
@@ -42,15 +45,27 @@ export const aboutData = [
     title: "experience",
     info: [
       {
-        title: "AI PM Intern - KartaAI",
+        title: (
+          <>
+            <span className="font-bold text-white">AI PM Intern</span> - KartaAI
+          </>
+        ),
         stage: "Apr 2026",
       },
       {
-        title: "AI/ML Research Intern - IEEE EMBS",
+        title: (
+          <>
+            <span className="font-bold text-white">AI/ML Research Intern</span> - IEEE EMBS
+          </>
+        ),
         stage: "Jun 2025",
       },
       {
-        title: "Scrum Master - Agile Project",
+        title: (
+          <>
+            <span className="font-bold text-white">Scrum Master</span> - Agile Project
+          </>
+        ),
         stage: "2024",
       },
     ],
@@ -59,15 +74,27 @@ export const aboutData = [
     title: "credentials",
     info: [
       {
-        title: "B.Tech CSE (AI) - IEM Kolkata",
+        title: (
+          <>
+            <span className="font-bold text-white">B.Tech CSE (AI)</span> - IEM Kolkata
+          </>
+        ),
         stage: "2022 - 2026",
       },
       {
-        title: "12th (WBCHSE) - Kolaghat Thermal Power Plant High School",
+        title: (
+          <>
+            <span className="font-bold text-white">12th (WBCHSE)</span> - Kolaghat Thermal Power Plant High School
+          </>
+        ),
         stage: "2022",
       },
       {
-        title: "10th (WBBSE) - Kolaghat Thermal Power Plant High School",
+        title: (
+          <>
+            <span className="font-bold text-white">10th (WBBSE)</span> - Kolaghat Thermal Power Plant High School
+          </>
+        ),
         stage: "2020",
       },
     ],
@@ -76,15 +103,23 @@ export const aboutData = [
     title: "awards & achievements",
     info: [
       {
-        title: "Mrs. Maya Chakrabarti Award for Academic Excellence",
+        title: (
+          <>
+            <span className="font-bold text-white">Mrs. Maya Chakrabarti Award for Academic Excellence</span>
+          </>
+        ),
         stage: "2026",
       },
       {
-        title: "Rank 1 (1st Year)/ Rank 3 (2nd Year) / Rank 1 (3rd Year)",
+        title: (
+          <>
+            <span className="font-bold text-white">Academic Ranks:</span> Rank 1 (1st Year) / Rank 3 (2nd Year) / Rank 1 (3rd Year)
+          </>
+        ),
         stage: "2022 - 2025",
       },
     ],
-  },
+  },,
 ];
 
 const About = () => {
@@ -205,25 +240,24 @@ const About = () => {
             ))}
           </div>
 
-          <div className="py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start">
+          <div className="py-2 xl:py-6 flex flex-col gap-y-4 items-start w-full">
             {aboutData[index].info.map((item, itemI) => (
               <div
                 key={itemI}
-                className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-center text-white/60"
+                className="flex flex-col md:flex-row md:items-start gap-x-3 w-full text-white/60"
               >
                 {/* title */}
-                <div className="font-light mb-2 md:mb-0">{item.title}</div>
-                <div className="hidden md:flex">-</div>
-                <div>{item.stage}</div>
-
-                <div className="flex gap-x-4">
-                  {/* icons */}
-                  {item.icons?.map((Icon, iconI) => (
-                    <div key={iconI} className="text-2xl text-white">
-                      <Icon />
-                    </div>
-                  ))}
+                <div className="font-light text-sm xl:text-base text-left leading-relaxed flex-1">
+                  {item.title}
                 </div>
+                
+                {/* Conditionally render the dash and stage only if there is a stage */}
+                {item.stage && (
+                  <div className="flex items-center gap-x-3 mt-1 md:mt-0 shrink-0">
+                    <div className="hidden md:flex text-accent">-</div>
+                    <div className="text-sm xl:text-base font-medium text-white/80">{item.stage}</div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
